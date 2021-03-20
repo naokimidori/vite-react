@@ -1,4 +1,4 @@
-# Vite2.0 + React + TypeScript + Ant Design4.x 开发环境搭建
+# Vite2.0 + React + TypeScript + Ant Design4.x 开发环境
 > vite参考：https://cn.vitejs.dev/
 
 - [x] env设置

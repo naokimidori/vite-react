@@ -5,6 +5,7 @@ import TestUseContext from '../../components/TestUseContext'
 import TestUseEffect from '../../components/TestUseEffect'
 import TestUseMemo from '../../components/TestUseMemo'
 import TestUseCallback from '../../components/TestUseCallback'
+import TestUseRef from '../../components/TestUseRef'
 import { GET } from '../../utils/request'
 import './index.less'
 
@@ -54,6 +55,7 @@ const Index: React.FC = () => {
       <TestUseEffect />
       <TestUseMemo />
       <TestUseCallback />
+      <TestUseRef />
     </div>
   )
 }

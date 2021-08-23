@@ -3,6 +3,7 @@ import { Button } from 'antd'
 import TestContext from '../../components/TestContext'
 import TestUseContext from '../../components/TestUseContext'
 import TestUseEffect from '../../components/TestUseEffect'
+import TestUseMemo from '../../components/TestUseMemo'
 import { GET } from '../../utils/request'
 import './index.less'
 
@@ -50,6 +51,7 @@ const Index: React.FC = () => {
         <TestUseContext />
       </counterContext.Provider>
       <TestUseEffect />
+      <TestUseMemo />
     </div>
   )
 }

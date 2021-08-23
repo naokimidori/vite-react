@@ -2,6 +2,7 @@ import React, { useEffect, useReducer, useContext } from 'react'
 import { Button } from 'antd'
 import TestContext from '../../components/TestContext'
 import TestUseContext from '../../components/TestUseContext'
+import TestUseEffect from '../../components/TestUseEffect'
 import { GET } from '../../utils/request'
 import './index.less'
 
@@ -48,6 +49,7 @@ const Index: React.FC = () => {
         <TestContext />
         <TestUseContext />
       </counterContext.Provider>
+      <TestUseEffect />
     </div>
   )
 }

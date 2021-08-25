@@ -36,8 +36,9 @@ function Index() {
           name='username'
           value={formik.values.username}
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
         />
-       <span className="tips">{formik.errors.username}</span>
+       <span className="tips">{ formik.touched.username && formik.errors.username}</span>
       </div>
       <div>
         密码：<input
@@ -45,8 +46,9 @@ function Index() {
           name='password'
           value={formik.values.password}
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
         />
-        <span className="tips">{formik.errors.password}</span>
+        <span className="tips">{ formik.touched.password && formik.errors.password}</span>
       </div>
       <input type='submit' />
     </form>

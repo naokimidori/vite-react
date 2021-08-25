@@ -1,19 +1,35 @@
-import React, { useEffect } from 'react'
-import { Button } from 'antd'
-import { GET } from '../../utils/request'
+import React from 'react'
+import { useFormik } from 'formik'
 import './index.less'
 
 function Index() {
-  console.log('import.meta.env', import.meta.env)
-  useEffect(() => {
-    GET('/index-infos').then(() => {
-      
-    })
-  }, [])
+
+  const formik = useFormik({
+    initialValues: {
+      username: '',
+      password: ''
+    },
+    onSubmit: values => {  
+      console.log(values)
+    }
+  })
+
   return (
-    <div className="page-index">
-      <Button type='primary'>btn</Button>
-    </div>
+    <form onSubmit={formik.handleSubmit}>
+      姓名：<input
+        type='text'
+        name='username'
+        value={formik.values.username}
+        onChange={formik.handleChange}
+      />
+      密码：<input
+        type='password'
+        name='password'
+        value={formik.values.password}
+        onChange={formik.handleChange}
+      />
+      <input type='submit' />
+    </form>
   )
 }
 

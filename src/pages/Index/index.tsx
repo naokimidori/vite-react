@@ -1,4 +1,5 @@
 import React from 'react'
+import * as Yup from 'yup'
 import { useFormik } from 'formik'
 import './index.less'
 
@@ -9,20 +10,28 @@ function Index() {
       username: '',
       password: ''
     },
-    validate: values => {
-      const errors: any = {}
-      if (!values.username) {
-        errors.username = '请输入用户名'
-      } else if (values.username.length > 15) {
-        errors.username = '用户名长度不能大于15'
-      }
-      if (!values.password) {
-        errors.password = '请输入密码'
-      } else if (values.password.length < 6) {
-        errors.password = '密码不能小于6位'
-      }
-      return errors
-    },
+    // validate: values => {
+    //   const errors: any = {}
+    //   if (!values.username) {
+    //     errors.username = '请输入用户名'
+    //   } else if (values.username.length > 15) {
+    //     errors.username = '用户名长度不能大于15'
+    //   }
+    //   if (!values.password) {
+    //     errors.password = '请输入密码'
+    //   } else if (values.password.length < 6) {
+    //     errors.password = '密码不能小于6位'
+    //   }
+    //   return errors
+    // },
+    validationSchema: Yup.object({
+      username: Yup.string()
+        .max(12, '用户名长度不能大于12位')
+        .required('请填写用户名'),
+      password: Yup.string()
+        .min(8, '密码长度不能小于8位')
+        .required('请填写密码')
+    }),
     onSubmit: values => {
       console.log(values)
     }

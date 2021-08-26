@@ -42,20 +42,14 @@ function Index() {
       <div>
         用户名：<input
           type='text'
-          name='username'
-          value={formik.values.username}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+          {...formik.getFieldProps('username')}
         />
        <span className="tips">{ formik.touched.username && formik.errors.username}</span>
       </div>
       <div>
         密码：<input
           type='password'
-          name='password'
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+          {...formik.getFieldProps('password')}
         />
         <span className="tips">{ formik.touched.password && formik.errors.password}</span>
       </div>

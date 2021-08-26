@@ -66,7 +66,9 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 const Index: React.FC = () => {
   const initialValues = {
-    username: 'test'
+    username: '',
+    content: '',
+    subject: 'FE'
   }
   const handleSubmit = (values: any) => {
     console.log(values)
@@ -89,6 +91,11 @@ const Index: React.FC = () => {
       <Form>
         <Field name="username" />
         <ErrorMessage name="username" />
+        <Field name='content' as="textarea" />
+        <Field as='select' name='subject'>
+          <option value="FE">前端</option>
+          <option value="BE">后端</option>
+        </Field>
         <input type="submit" />
       </Form>
     </Formik>

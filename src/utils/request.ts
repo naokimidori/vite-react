@@ -13,14 +13,14 @@ const MODE: IMode = import.meta.env.MODE as IMode // 环境变量
 
 const getRequest = (method: 'GET' | 'POST') => {
   return (url: string, data?: any, options = {} as any) => {
-    let base = config[MODE] // 获取环境变量相对应的属性值
+    const base = config[MODE] // 获取环境变量相对应的属性值
     return axios({
       baseURL: base.apiBaseUrl, // 请求域名地址
       method,
       url,
       ...(method === 'POST'
         ? {
-            data: options.string ? stringify(data) : data,
+            data: options.string ? stringify(data) : data
           }
         : {}),
       params: method === 'GET' ? data : options.params,
@@ -29,9 +29,9 @@ const getRequest = (method: 'GET' | 'POST') => {
         'Content-Type': options.string
           ? 'application/x-www-form-urlencoded'
           : 'application/json',
-        ...options.headers,
+        ...options.headers
       },
-      withCredentials: true,
+      withCredentials: true
     } as AxiosRequestConfig)
       .then((res) => {
         if (typeof res.data !== 'object') {
@@ -41,13 +41,12 @@ const getRequest = (method: 'GET' | 'POST') => {
         }
 
         if (res.data.errcode) {
-          if (res.data.errcode == 401) {
+          if (res.data.errcode === 401) {
             window.location.href = 'login' // 登录失效跳转登录页
             return
           }
           // silent 选项，错误不提示
-          if (res.data.message && !options.silent)
-            message.error(res.data.message)
+          if (res.data.message && !options.silent) { message.error(res.data.message) }
           return Promise.reject(res.data)
         }
 

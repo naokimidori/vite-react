@@ -3,11 +3,11 @@ import { Button } from 'antd'
 import { GET } from '../../utils/request'
 import './index.less'
 
-function Index() {
+function Index () {
   console.log('import.meta.env', import.meta.env)
   useEffect(() => {
     GET('/index-infos').then(() => {
-      
+
     })
   }, [])
   return (
@@ -17,4 +17,4 @@ function Index() {
   )
 }
 
-export default Index;
+export default Index

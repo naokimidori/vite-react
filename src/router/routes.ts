@@ -1,15 +1,15 @@
 import {
   Index,
   About
-} from '../pages/index';
+} from '../pages/index'
 
 export const routes = [
   {
     path: '/',
-    component: Index,
+    component: Index
   },
   {
     path: '/about',
-    component: About,
-  },
-];
+    component: About
+  }
+]

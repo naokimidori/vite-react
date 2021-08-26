@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { HashRouter, Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
-import { routes } from './routes';
+import * as React from 'react'
+import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom'
+import { routes } from './routes'
 
-function Routes() {
+function Routes () {
   return (
     <BrowserRouter>
       <Switch>
@@ -20,4 +20,4 @@ function Routes() {
   )
 }
 
-export default Routes;
+export default Routes

@@ -21,10 +21,10 @@ export default defineConfig({
     vitePluginImp({
       libList: [
         {
-          libName: "antd",
-          style: (name) => `antd/lib/${name}/style/index.less`,
-        },
-      ],
+          libName: 'antd',
+          style: (name) => `antd/lib/${name}/style/index.less`
+        }
+      ]
     })
   ],
   css: {
@@ -33,7 +33,7 @@ export default defineConfig({
         // 支持内联 JavaScript
         javascriptEnabled: true,
         // 重写 less 变量，定制样式
-        modifyVars: themeVariables,
+        modifyVars: themeVariables
       }
     }
   },

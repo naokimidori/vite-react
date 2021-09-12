@@ -19,6 +19,12 @@ module.exports = {
     'react',
     '@typescript-eslint'
   ],
+  settings: {
+    react: {
+      pragma: 'React',
+      version: 'detect'
+    }
+  },
   rules: {
     'no-use-before-define': 'off'
   }

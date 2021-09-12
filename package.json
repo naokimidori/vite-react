@@ -7,7 +7,8 @@
     "build:beta": "vite build --mode beta",
     "build:prod": "vite build --mode prod",
     "serve": "vite preview",
-    "lint": "eslint src/**"
+    "prepare": "husky install",
+    "lint": "eslint src/**/*.{tsx,ts,js,jsx}"
   },
   "dependencies": {
     "@ant-design/icons": "^4.5.0",
@@ -19,6 +20,8 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@types/node": "^14.14.35",
     "@types/qs": "^6.9.6",
     "@types/react": "^17.0.0",
@@ -41,14 +44,7 @@
     "vite": "^2.1.0",
     "vite-plugin-imp": "^2.0.4"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint-staged"
-    }
-  },
   "lint-staged": {
-    "src/**/*.{js,jsx,tsx}": [
-      "npm run lint"
-    ]
+    "*.{js,ts,jsx,tsx}": "eslint src/**"
   }
 }

@@ -6,8 +6,8 @@ import './index.less'
 function Index () {
   console.log('import.meta.env', import.meta.env)
   useEffect(() => {
-    GET('/index-infos').then(() => {
-
+    GET('/index-infos').then((res) => {
+      console.log(res)
     })
   }, [])
   return (

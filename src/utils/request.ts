@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios, { AxiosRequestConfig } from 'axios'
 import { message } from 'antd'
 import { stringify } from 'qs'
